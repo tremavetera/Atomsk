@@ -58,7 +58,7 @@ def generate_alloy_compositions(elements, total_atoms, increment):
 
 # Isolated part to generate alloy files
 def generate_alloy_files():
-    total_atoms = 54
+    total_atoms = 27
     elements = ["V", "Cr", "Ti", "W"]
     increment = 3
     
