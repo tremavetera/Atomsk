@@ -31,7 +31,7 @@ def create_alloy(composition, elements, total_atoms, filename):
 
 # Function to generate alloy compositions with one element varied and others equal
 def generate_alloy_compositions(elements, total_atoms, increment):
-    compositions = set()
+    compositions = []
     num_elements = len(elements)
     
     # Generate compositions with one element varied and others equal
@@ -42,7 +42,7 @@ def generate_alloy_compositions(elements, total_atoms, increment):
                 equal_share = remaining_atoms // (num_elements - 1)
                 composition = [equal_share] * num_elements
                 composition[varying_element] = i
-                compositions.add(composition)
+                compositions.append(composition)
     
     # Generate any remaining combinations
     for i in range(0, total_atoms + 1, increment):
@@ -52,7 +52,7 @@ def generate_alloy_compositions(elements, total_atoms, increment):
                 if l >= 0:
                     composition = [i, j, k, l]
                     if composition not in compositions:
-                        compositions.add(composition)
+                        compositions.append(composition)
     
     return compositions
 
