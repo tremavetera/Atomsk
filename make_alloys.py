@@ -5,13 +5,13 @@ from ase.build import bulk, make_supercell
 from ase.io import write
 
 # Function to create alloys using ASE
-def create_alloy(composition, elements, total_atoms, filename):
+def create_alloy(composition, elements, num_unit_cells, filename,iscubic):
     # Create a base structure (e.g., BCC V)
     base_element = elements[0]
-    base_structure = bulk(base_element, 'bcc', a=2.87)
+    base_structure = bulk(base_element, 'bcc', a=2.87,cubic=iscubic)
 
     # Create a supercell
-    supercell = make_supercell(base_structure, [[3, 0, 0], [0, 3, 0], [0, 0, 3]])
+    supercell = make_supercell(base_structure, [[num_unit_cells, 0, 0], [0, num_unit_cells, 0], [0, 0, num_unit_cells]])
     
     # Replace atoms to create the alloy
     indices = list(range(len(supercell)))
@@ -57,8 +57,10 @@ def generate_alloy_compositions(elements, total_atoms, increment):
     return compositions
 
 # Isolated part to generate alloy files
-def generate_alloy_files():
-    total_atoms = 27
+def generate_alloy_files(num_unit_cells,iscubic=False):
+    total_atoms =num_unit_cells**3
+    if iscubic :
+        total_atoms*=2
     elements = ["V", "Cr", "Ti", "W"]
     increment = 3
     
@@ -68,7 +70,7 @@ def generate_alloy_files():
     for composition in compositions:
         alloy_name = f"alloy_{'_'.join(map(str, composition))}"
         filename = f"{alloy_name}.xsf"
-        create_alloy(composition, elements, total_atoms, filename)
+        create_alloy(composition, elements, num_unit_cells, filename,iscubic)
 
         # Check if the file was created successfully
         if not os.path.exists(filename):
@@ -77,4 +79,4 @@ def generate_alloy_files():
             print(f"Successfully created {filename}")
 
 if __name__ == "__main__":
-    generate_alloy_files()
+    generate_alloy_files(3,True)
