@@ -1,0 +1,7 @@
+*.xsf
+vasp_calculations
+from ase.py
+*.cfg
+alloy_Al_Fe_Si_Cu.sh
+*.code-workspace
+.DS_Store

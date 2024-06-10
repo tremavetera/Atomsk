@@ -1,0 +1,75 @@
+# Draft CIF file generated with Atomsk
+
+data_I
+
+_audit_creation_date      'June 4, 2024'
+_audit_creation_method    'Draft CIF file generated with Atomsk'
+ 
+_chemical_name_common             ?
+_chemical_melting_point           ?
+_chemical_formula_iupac           'Cu8 Fe8 Al8 Si8'
+_chemical_formula_moiety          'Cu8 Fe8 Al8 Si8'
+_chemical_formula_sum             'Cu8 Fe8 Al8 Si8'
+_chemical_formula_weight          1395.660
+_chemical_compound_source         ?
+_chemical_absolute_configuration  ?
+_exptl_crystal_description        'EDIT-ENTRY'
+_diffrn_measurement_device_type   'EDIT-ENTRY'
+ 
+_space_group_IT_number            1
+_space_group_crystal_system       cubic
+_symmetry_space_group_name_Hall   'P 1'
+_symmetry_space_group_name_H-M    'P 1'
+ 
+loop_
+_space_group_symop_operation_xyz
+'+x,+y,+z'
+ 
+_cell_length_a                    8.0920
+_cell_length_b                    8.0920
+_cell_length_c                    8.0920
+_cell_angle_alpha                 90.0000
+_cell_angle_beta                  90.0000
+_cell_angle_gamma                 90.0000
+_cell_volume                      529.8679
+ 
+loop_
+ _atom_site_label
+ _atom_site_type_symbol
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+Cu1  Cu  0.000000  0.000000  0.000000
+Cu2  Cu  0.250000  0.250000  0.000000
+Cu3  Cu  0.000000  0.250000  0.250000
+Fe1  Fe  0.250000  0.000000  0.250000
+Al1  Al  0.500000  0.000000  0.000000
+Al2  Al  0.750000  0.250000  0.000000
+Al3  Al  0.500000  0.250000  0.250000
+Cu4  Cu  0.750000  0.000000  0.250000
+Si1  Si  0.000000  0.500000  0.000000
+Fe2  Fe  0.250000  0.750000  0.000000
+Fe3  Fe  0.000000  0.750000  0.250000
+Si2  Si  0.250000  0.500000  0.250000
+Cu5  Cu  0.500000  0.500000  0.000000
+Al4  Al  0.750000  0.750000  0.000000
+Fe4  Fe  0.500000  0.750000  0.250000
+Al5  Al  0.750000  0.500000  0.250000
+Si3  Si  0.000000  0.000000  0.500000
+Si4  Si  0.250000  0.250000  0.500000
+Si5  Si  0.000000  0.250000  0.750000
+Cu6  Cu  0.250000  0.000000  0.750000
+Fe5  Fe  0.500000  0.000000  0.500000
+Fe6  Fe  0.750000  0.250000  0.500000
+Cu7  Cu  0.500000  0.250000  0.750000
+Al6  Al  0.750000  0.000000  0.750000
+Si6  Si  0.000000  0.500000  0.500000
+Fe7  Fe  0.250000  0.750000  0.500000
+Al7  Al  0.000000  0.750000  0.750000
+Cu8  Cu  0.250000  0.500000  0.750000
+Si7  Si  0.500000  0.500000  0.500000
+Al8  Al  0.750000  0.750000  0.500000
+Si8  Si  0.500000  0.750000  0.750000
+Fe8  Fe  0.750000  0.500000  0.750000
+
+# end of cif file
