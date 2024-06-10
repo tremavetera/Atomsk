@@ -69,7 +69,7 @@ def generate_alloy_files(num_unit_cells,iscubic=False):
 
     for composition in compositions:
         alloy_name = f"alloy_{'_'.join(map(str, composition))}"
-        filename = f"{alloy_name}.xsf"
+        filename = f"alloys/{alloy_name}.xsf"
         create_alloy(composition, elements, num_unit_cells, filename,iscubic)
 
         # Check if the file was created successfully
