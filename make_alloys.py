@@ -12,12 +12,7 @@ def create_alloy(composition, elements, total_atoms, filename):
 
     # Create a supercell
     supercell = make_supercell(base_structure, [[3, 0, 0], [0, 3, 0], [0, 0, 3]])
-    supercell *= int(total_atoms / len(supercell))
-
-    # Ensure the supercell has the correct number of atoms
-    while len(supercell) > total_atoms:
-        supercell.pop(-1)
-
+    
     # Replace atoms to create the alloy
     indices = list(range(len(supercell)))
     np.random.shuffle(indices)
