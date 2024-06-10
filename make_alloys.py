@@ -23,13 +23,15 @@ def create_alloy(composition, elements, total_atoms, filename):
             if current_index < len(indices):
                 supercell[indices[current_index]].symbol = elements[i]
                 current_index += 1
+            else:
+                print(f"Hey this index of :{current_index} is way off")
 
     # Write the structure to a file
     write(filename, supercell)
 
 # Function to generate alloy compositions with one element varied and others equal
 def generate_alloy_compositions(elements, total_atoms, increment):
-    compositions = []
+    compositions = set()
     num_elements = len(elements)
     
     # Generate compositions with one element varied and others equal
@@ -40,7 +42,7 @@ def generate_alloy_compositions(elements, total_atoms, increment):
                 equal_share = remaining_atoms // (num_elements - 1)
                 composition = [equal_share] * num_elements
                 composition[varying_element] = i
-                compositions.append(composition)
+                compositions.add(composition)
     
     # Generate any remaining combinations
     for i in range(0, total_atoms + 1, increment):
@@ -50,14 +52,14 @@ def generate_alloy_compositions(elements, total_atoms, increment):
                 if l >= 0:
                     composition = [i, j, k, l]
                     if composition not in compositions:
-                        compositions.append(composition)
+                        compositions.add(composition)
     
     return compositions
 
 # Isolated part to generate alloy files
 def generate_alloy_files():
     total_atoms = 54
-    elements = ["V", "Cr", "Ba", "W"]
+    elements = ["V", "Cr", "Ti", "W"]
     increment = 3
     
     # Generate alloy compositions
